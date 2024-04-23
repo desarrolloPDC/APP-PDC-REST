@@ -19,19 +19,12 @@ app.use(express.urlencoded({extended:true})); //form-urlencoded
 // cargo rutas
 app.use('/', routes)
 
-//crear server y escuchar petisiones
-// app.listen(3000, () => {
-//     console.log("Server is now running on port " + 3000)
-// })
-
 const sslServer = https.createServer(
     {
-        key: fs.readFileSync(path.join(__dirname, 'cert', 'key.pem')),
-        cert: fs.readFileSync(path.join(__dirname, 'cert', 'cert.pem'))
+        key: fs.readFileSync(path.join(__dirname, 'SSL', 'domain.key')),
+        cert: fs.readFileSync(path.join(__dirname, 'SSL', 'domain.crt'))
     }, 
     app
 )
 
-sslServer.listen(3443, 
-    () => console.log('Server is now running on port 3443')
-)
+sslServer.listen(3443, () => console.log('Server is now running on port 3443'))
