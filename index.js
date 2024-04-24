@@ -22,8 +22,8 @@ app.use('/', routes)
 //ssl Server con openSSL
 const sslServer = https.createServer(
     {
-        key: fs.readFileSync(path.join(__dirname, 'cert', 'key.pem')),
-        cert: fs.readFileSync(path.join(__dirname, 'cert', 'cert.pem'))
+        key: fs.readFileSync(path.join(__dirname, 'ssl', 'key.pem')),
+        cert: fs.readFileSync(path.join(__dirname, 'ssl', 'cert.pem'))
     }, 
     app
 )
