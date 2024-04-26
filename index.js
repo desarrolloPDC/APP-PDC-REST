@@ -21,13 +21,13 @@ app.use('/', routes)
 app.use('/.well-known/pki-validation', express.static(__dirname + '/.well-known/pki-validation'));
 
 //ssl Server con openSSL
-const sslServer = https.createServer(
-    {
-        key: fs.readFileSync(path.join(__dirname, 'ssl', 'key.pem')),
-        cert: fs.readFileSync(path.join(__dirname, 'ssl', 'cert.pem'))
-    }, 
-    app
-)
+// const sslServer = https.createServer(
+//     {
+//         key: fs.readFileSync(path.join(__dirname, 'ssl', 'key.pem')),
+//         cert: fs.readFileSync(path.join(__dirname, 'ssl', 'cert.pem'))
+//     }, 
+//     app
+// )
 
 sslServer.listen(3443, () => 
     console.log('Server is now running on port 3443')
