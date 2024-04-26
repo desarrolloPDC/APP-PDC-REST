@@ -18,6 +18,7 @@ app.use(express.urlencoded({extended:true})); //form-urlencoded
 
 // cargo rutas
 app.use('/', routes)
+app.use('/.well-known/pki-validation', express.static(__dirname + '/.well-known/pki-validation'));
 
 //ssl Server con openSSL
 const sslServer = https.createServer(
