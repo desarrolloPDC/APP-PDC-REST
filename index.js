@@ -15,7 +15,6 @@ app.use(cors());
 app.use(express.json()); //recibir datos con content-tyupe app/json
 app.use(express.urlencoded({extended:true})); //form-urlencoded
 
-
 // cargo rutas
 app.use('/', routes)
 
